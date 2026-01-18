@@ -7,6 +7,7 @@ data type of javascript?
 */
 
 import React from "react";
+import Button from "../components/ui/Button";
 
 function Component() {
   const isLoading = true;
@@ -38,6 +39,8 @@ function Component() {
       <img src="abc" alt="abc" />
       <br></br>
       <br />
+
+      Please click to add product: <Button buttonText="Add Product" />
     </React.Fragment>
   )
 }

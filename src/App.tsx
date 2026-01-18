@@ -1,6 +1,7 @@
 import Component from './fundamental/Component';
 import Props from './fundamental/Props';
 import ThangComposeComponent from './sampleApp/thang/ComposeComponent';
+import GuestGreeting from './sampleApp/thang/GuestGreeting';
 import ComposeComponent from './sampleApp/tony/ComposeComponent';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
 
       <br /> <br />
       <ThangComposeComponent />
+
+      <br />
+      <GuestGreeting />
     </>
   )
 }

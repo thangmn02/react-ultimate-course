@@ -1,23 +1,25 @@
 import { useState } from 'react';
+import Button from '../../components/ui/Button';
 
 function ThangComposeComponent() { 
   const[count, setCount] = useState(0);
 
-  function onClick(){
+  function handleIncrement(){
     setCount(count +1);
   }  
 
   return (
-    <div className="alert-box">
+    <div>
       <h1>Sample App: ComposeComponent</h1>
-       <h2 className="alert-header">
-        Item count: {count}
+      <div className="alert-box">
+        <h2 className="alert-header">
+          Item count: {count}
         </h2>
-       <button 
-       onClick ={onClick}
-       >
-        Increment
-       </button>
+        <Button 
+          buttonText="Increment"
+          onClick={handleIncrement}
+        />
+      </div>
     </div>
   );
 }
