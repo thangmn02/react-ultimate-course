@@ -31,11 +31,21 @@ function State() {
     // book.title = 'React' + Date.now(); // mutate object -> memory A
     // setBook(book); // previous state memory A <=> pending state memory A
 
-    const newBook = {
-      ...book, // copy all properties book
-      title: 'React'
-    }
-    setBook(newBook); // previous state memory A  <=> pending state memory X
+    // const newBook = {
+    //   ...book, // copy all properties book
+    //   title: 'React'
+    // }
+    // setBook(newBook); // previous state memory A  <=> pending state memory X
+
+    // updater function
+    // sytanx code: arrow function
+    setBook((prevState) => {
+      const newState = {
+        ...prevState,
+        title: 'React'
+      }
+      return newState
+    })
   }
 
   console.log('State render', book);

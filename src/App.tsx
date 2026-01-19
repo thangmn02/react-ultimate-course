@@ -1,4 +1,5 @@
 import Component from './fundamental/Component';
+import ConditionalRendering from './fundamental/ConditionalRendering';
 import Props from './fundamental/Props';
 import State from './fundamental/State';
 import ThangComposeComponent from './sampleApp/thang/ComposeComponent';
@@ -24,6 +25,9 @@ function App() {
 
       <br />
       <State />
+
+      <br />
+      <ConditionalRendering />
 
       <br /> <br />
       <br /> <br />
