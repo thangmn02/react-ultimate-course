@@ -48,7 +48,7 @@ export default function GenerateBox() {
                         max="100"
                         value={numInput}
                         onChange={(e) => setNumInput(e.target.value)}
-                        className={style.input}
+                        className={styles.input}
                     />
                     <button
                         onClick={handleGenerate}

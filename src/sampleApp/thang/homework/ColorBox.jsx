@@ -1,34 +1,51 @@
 import { useState } from 'react';
-import './ColorBox.css';
 
 export default function ColorBox() {
   const [activeColor, setActiveColor] = useState(null);
-  const colors = [
-    { name: 'red', class: 'red' },
-    { name: 'yellow', class: 'yellow' },
-    { name: 'aqua', class: 'aqua' },
-    { name: 'purple', class: 'purple' }
-  ];
+  const colors = ['red', 'yellow', 'aqua', 'purple'];
 
   const handleClick = (color) => {
     setActiveColor(prev => prev === color ? null : color);
   };
 
   return (
-    <div className="color-box-container">
-      <p className="current-color">
+    <div
+      style={{
+        maxWidth: '400px',
+        margin: '0 auto',
+        padding: '20px'
+      }}>
+      <p
+        style={{
+          fontWeight: 'bold',
+          marginBottom: '15px'
+        }}>
         Current color: {activeColor || 'Default'}
       </p>
 
-      <div className="color-grid">
-        {colors.map((item) => (
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '10px',
+        justifyContent: 'center'
+      }}>
+
+        {colors.map(color => (
           <button
-            key={item.name}
-            className={`color-box ${activeColor || item.class}`}
-            onClick={() => handleClick(item.name)}
-            type="button"
+            key={color}
+            style={{
+              width: '100px',
+              height: '100px',
+              backgroundColor: activeColor || color,
+              border: 'none',
+              color: 'black',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              cursor: 'pointer'
+            }}
+            onClick={() => handleClick(color)}
           >
-            {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+            {color.charAt(0).toUpperCase() + color.slice(1)}
           </button>
         ))}
       </div>
