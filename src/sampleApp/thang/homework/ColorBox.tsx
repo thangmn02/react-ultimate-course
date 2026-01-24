@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 export default function ColorBox() {
-  const [activeColor, setActiveColor] = useState(null);
+  const [activeColor, setActiveColor] = useState<string | null>(null);
   const colors = ['red', 'yellow', 'aqua', 'purple'];
 
-  const handleClick = (color) => {
+  const handleClick = (color: string) => {
     setActiveColor(prev => prev === color ? null : color);
   };
 

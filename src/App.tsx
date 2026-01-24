@@ -5,7 +5,7 @@ import State from './fundamental/State';
 import ThangComposeComponent from './sampleApp/thang/ComposeComponent';
 import GuestGreeting from './sampleApp/thang/GuestGreeting';
 import ComposeComponent from './sampleApp/tony/ComposeComponent';
-import GenerateBox from './sampleApp/thang/homework/GenerateBox.';
+import GenerateBox from './sampleApp/thang/homework/GenerateBox';
 import TrafficLight from './sampleApp/thang/homework/TrafficLight';
 
 function App() {
