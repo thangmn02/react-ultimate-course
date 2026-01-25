@@ -7,6 +7,7 @@ import GuestGreeting from './sampleApp/thang/GuestGreeting';
 import ComposeComponent from './sampleApp/tony/ComposeComponent';
 import GenerateBox from './sampleApp/thang/homework/GenerateBox';
 import TrafficLight from './sampleApp/thang/homework/TrafficLight';
+import TonyTrafficLight from './sampleApp/thang/homework/TonyTrafficLight';
 
 function App() {
   return (
@@ -35,7 +36,9 @@ function App() {
       <GenerateBox />
 
       <br /> <br />
-      <TrafficLight />
+      {/* <TrafficLight /> */}
+      <TonyTrafficLight />
+      
       <br /> <br />
       <br /> <br />
       <br /> <br />
