@@ -1,4 +1,3 @@
-import './TrafficLight.css';
 import { useState, useEffect } from 'react';
 
 export default function App() {

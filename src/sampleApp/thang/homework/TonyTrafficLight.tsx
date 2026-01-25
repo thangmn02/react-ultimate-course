@@ -1,4 +1,3 @@
-import './TrafficLight.css';
 import React, { useState, useEffect } from 'react';
 
 /*

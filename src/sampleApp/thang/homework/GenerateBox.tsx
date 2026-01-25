@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from './GenerateBox.module.css'; 
 import { randomColor } from "../../../utils/randomColor";
-
 /*
 [
     { id: xx, title: xx, descrption: xxx },

@@ -6,8 +6,9 @@ import ThangComposeComponent from './sampleApp/thang/ComposeComponent';
 import GuestGreeting from './sampleApp/thang/GuestGreeting';
 import ComposeComponent from './sampleApp/tony/ComposeComponent';
 import GenerateBox from './sampleApp/thang/homework/GenerateBox';
-import TrafficLight from './sampleApp/thang/homework/TrafficLight';
+// import TrafficLight from './sampleApp/thang/homework/TrafficLight';
 import TonyTrafficLight from './sampleApp/thang/homework/TonyTrafficLight';
+import ListKey from './fundamental/ListKey';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
       <TonyTrafficLight />
       
       <br /> <br />
+      <ListKey />
+
+
       <br /> <br />
       <br /> <br />
     </>
