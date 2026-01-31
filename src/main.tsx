@@ -2,6 +2,7 @@
 import { createRoot } from 'react-dom/client'
 
 import './styles/TrafficLight.css';
+import './styles/QuestionBoard.css';
 import './styles/index.css';
 import App from './App.tsx'
 
