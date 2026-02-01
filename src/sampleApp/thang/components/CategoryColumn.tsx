@@ -6,7 +6,7 @@ const getQuestionStatus = (questionId: string, submissions: Submission[]): strin
   return submission ? submission.status : 'NONE';
 };
 
-function CategoryColumn({ title, questions, submissions }: CategoryColumnProps) {
+function CategoryColumn({ title, questions, submissions, deleteItem }: CategoryColumnProps) {
   const completedCount = questions.filter(q => {
     const status = getQuestionStatus(q.id, submissions);
     return status !== 'NONE';
@@ -19,6 +19,7 @@ function CategoryColumn({ title, questions, submissions }: CategoryColumnProps) 
         key={question.id}
         question={question}
         status={status}
+        deleteItem={deleteItem}
       />
     );
   });

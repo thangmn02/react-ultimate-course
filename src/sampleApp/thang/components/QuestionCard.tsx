@@ -1,7 +1,7 @@
 import type { Question } from '../../../types/questionboard.types';
 import { getStatusColor } from '../../../utils/getStatusColor';
 
-const QuestionCard = ({ question, status }: { question: Question; status: string }) => {
+const QuestionCard = ({ question, status, deleteItem }: { question: Question; status: string, deleteItem: (id: string) => void }) => {
   return (
     <div className="question-card">
       <div 
@@ -9,6 +9,7 @@ const QuestionCard = ({ question, status }: { question: Question; status: string
         style={{ backgroundColor: getStatusColor(status) }}
       />
       <span className="question-name">{question.name}</span>
+      <button type='button' onClick={() => deleteItem(question.id)}>Delete</button>
     </div>
   );
 };

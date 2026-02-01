@@ -13,4 +13,5 @@ export interface CategoryColumnProps {
   title: string;
   questions: Question[];
   submissions: Submission[];
+  deleteItem: (id: string) => void
 }
