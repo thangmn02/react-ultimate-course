@@ -50,6 +50,7 @@ const UserRegistration = () => {
     console.log('abc')
 
     console.log('abc2')
+    console.log('abc3')
     e.preventDefault();
     if (!validateForm()) {
       showAlert('error', 'Please fix the errors in the form');
