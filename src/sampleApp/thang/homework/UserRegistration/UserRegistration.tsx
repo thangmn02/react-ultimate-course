@@ -47,6 +47,7 @@ const UserRegistration = () => {
   };
 
   const saveUser = (e: React.FormEvent) => {
+    console.log('saveUser')
     e.preventDefault();
     if (!validateForm()) {
       showAlert('error', 'Please fix the errors in the form');
