@@ -66,6 +66,27 @@ const UserRegistration = () => {
       showAlert('success', `Created user: ${formData.fullName}`);
     }
     clearFormSelection();
+
+    // commit 1
+    console.log('abc')
+
+    console.log('abc2')
+    console.log('abc3')
+    console.log('abc4')
+
+    // commit 2
+    console.log('abc')
+
+    console.log('abc2')
+    console.log('abc3')
+    console.log('abc4')
+
+    // commit 3
+    console.log('abc')
+
+    console.log('abc2')
+    console.log('abc3')
+    console.log('abc4')
   };
 
   const selectUserForEditing = (user: User) => {
