@@ -86,7 +86,7 @@ const UserRegistration = () => {
   const paginatedUsers = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;
     return users.slice(start, start + itemsPerPage);
-  }, [users, currentPage]);
+  }, [users, currentPage]); // 10
 
   return (
     <div className={styles.container}>

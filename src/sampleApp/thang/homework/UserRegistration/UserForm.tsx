@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './UserRegistration.module.css';
 import type { User, FormErrors } from './types'; // Đã thêm 'type'
+import InputField from '../../../../components/ui/InputField';
 
 interface RegistrationFormProps {
   formData: Omit<User, 'id'>;
@@ -29,7 +30,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
         <form onSubmit={onSave} className={styles.form}>
           <div className={styles.formGrid}>
             <div className={styles.formGroup}>
-              <label htmlFor="fullName" className={styles.label}>Full Name</label>
+              {/* <label htmlFor="fullName" className={styles.label}>Full Name</label>
               <input
                 id="fullName"
                 type="text"
@@ -38,7 +39,21 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
                 onChange={onInputChange}
                 className={`${styles.input} ${errors.fullName ? styles.inputError : ''}`}
               />
-              {errors.fullName && <span className={styles.errorText}>{errors.fullName}</span>}
+              {errors.fullName && <span className={styles.errorText}>{errors.fullName}</span>} */}
+
+              <InputField 
+                id="fullName"
+                type="text"
+                name="fullName"
+                className={`${styles.input} ${errors.fullName ? styles.inputError : ''}`}
+                labelText='Full Name'
+                htmlFor='fullName'
+                labelClass={styles.label}
+                value={formData.fullName}
+                onChange={onInputChange}
+                errorFullname={errors.fullName || ''}
+                errorsClass={styles.errorText}
+              />
             </div>
             
             <div className={styles.formGroup}>

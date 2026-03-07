@@ -10,6 +10,7 @@ import GenerateBox from './sampleApp/thang/homework/GenerateBox';
 import TonyTrafficLight from './sampleApp/thang/homework/TonyTrafficLight';
 import ListKey from './fundamental/ListKey';
 import QuestionBoard from './sampleApp/thang/homework/QuestionBoard';
+import UserRegistration from './sampleApp/thang/homework/UserRegistration';
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
       <br /> <br />
       <QuestionBoard/>
       <br /> <br />
+
+      <br /><br/>
+      <UserRegistration />
     </>
   )
 }
