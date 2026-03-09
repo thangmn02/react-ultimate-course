@@ -11,8 +11,12 @@ import TonyTrafficLight from './sampleApp/thang/homework/TonyTrafficLight';
 import ListKey from './fundamental/ListKey';
 import QuestionBoard from './sampleApp/thang/homework/QuestionBoard';
 import UserRegistration from './sampleApp/thang/homework/UserRegistration';
+import StateHook from './fundamental/StateHook';
+import EffectHook from './fundamental/EffectHook';
+import React from 'react';
 
 function App() {
+  const [isShowEffect, setIsShowEffect] = React.useState(true);
   return (
     <>
       <Component />
@@ -52,6 +56,22 @@ function App() {
 
       <br /><br/>
       <UserRegistration />
+
+      <br /><br />
+      <StateHook />
+
+      <br /><br/>
+      <button type="button" onClick={() => setIsShowEffect(prevState => !prevState)}>Show EffectHook</button>
+      <br />
+      {isShowEffect && <EffectHook />}
+
+      <br /><br/>
+
+      <br /><br/>
+      <br /><br/>
+      <br /><br/>
+      <br /><br/>
+      <br /><br/>
     </>
   )
 }
