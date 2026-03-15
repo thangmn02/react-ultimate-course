@@ -14,6 +14,7 @@ import UserRegistration from './sampleApp/thang/homework/UserRegistration';
 import StateHook from './fundamental/StateHook';
 import EffectHook from './fundamental/EffectHook';
 import React from 'react';
+import PersonalForm from './sampleApp/tony/PersonalForm/PersonalForm';
 
 function App() {
   const [isShowEffect, setIsShowEffect] = React.useState(true);
@@ -66,6 +67,9 @@ function App() {
       {isShowEffect && <EffectHook />}
 
       <br /><br/>
+
+      <h1>Personal Hook Form with Tony</h1>
+      <PersonalForm />
 
       <br /><br/>
       <br /><br/>
