@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './UserRegistration.module.css';
 import type { User } from './types';
+import Button from '../../../../components/ui/Button';
 
 interface RegisteredUsersTableProps {
   users: User[];
@@ -37,8 +38,18 @@ const RegisteredUsersTable: React.FC<RegisteredUsersTableProps> = ({
               <td className={styles.tableCell}>{user.city}</td>
               <td className={styles.tableCell}>{user.country}</td>
               <td className={styles.tableCell}>
-                <button onClick={() => onSelectEdit(user)} className={`${styles.actionBtn} ${styles.editBtn}`}>Edit</button>
-                <button onClick={() => onDelete(user.id)} className={`${styles.actionBtn} ${styles.deleteBtn}`}>Delete</button>
+                <Button 
+                  onClick={() => onSelectEdit(user)} 
+                  className={`${styles.actionBtn} ${styles.editBtn}`}
+                >
+                  Edit
+                </Button>
+                <Button 
+                  onClick={() => onDelete(user.id)} 
+                  className={`${styles.actionBtn} ${styles.deleteBtn}`}
+                >
+                  Delete
+                </Button>
               </td>
             </tr>
           )) : (
@@ -55,16 +66,20 @@ const RegisteredUsersTable: React.FC<RegisteredUsersTableProps> = ({
         <div className={styles.pagination}>
           <span className={styles.paginationInfo}>Showing {paginatedUsers.length} entries</span>
           <div className={styles.paginationControls}>
-            <button 
+            <Button 
               onClick={() => onPageChange(Math.max(1, currentPage - 1))} 
               disabled={currentPage === 1}
               className={`${styles.pageBtn} ${currentPage === 1 ? styles.disabled : ''}`}
-            >← Prev</button>
-            <button 
+            >
+              ← Prev
+            </Button>
+            <Button 
               onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))} 
               disabled={currentPage === totalPages}
               className={`${styles.pageBtn} ${currentPage === totalPages ? styles.disabled : ''}`}
-            >Next →</button>
+            >
+              Next →
+            </Button>
           </div>
         </div>
       )}
