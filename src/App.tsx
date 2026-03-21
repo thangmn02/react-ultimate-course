@@ -11,7 +11,11 @@ import TonyTrafficLight from './sampleApp/thang/homework/TonyTrafficLight';
 import ListKey from './fundamental/ListKey';
 import QuestionBoard from './sampleApp/thang/homework/QuestionBoard';
 import UserRegistration from './sampleApp/thang/homework/UserRegistration';
+import Checkout from './features/checkout/Checkout';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 
+
+const theme = createTheme();
 function App() {
   return (
     <>
@@ -52,6 +56,12 @@ function App() {
 
       <br /><br/>
       <UserRegistration />
+
+      <br /> <br />
+      <ThemeProvider theme={theme}>   
+      <CssBaseline /> 
+      <Checkout />
+    </ThemeProvider>
     </>
   )
 }
