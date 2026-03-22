@@ -30,6 +30,8 @@ const { firstName, hasLoading } = person; es6
 const { firstName, hasLoading, ...restProps } = person; es6
 */
 
+import { useTodoContext } from "../contexts/TodoContext"
+
 interface PersonProps extends React.PropsWithChildren {
   firstName?: string,
   age: number,
@@ -90,6 +92,8 @@ function Button() {
 }
 
 function Props() {
+  const todos = useTodoContext();
+  console.log('Props: ', todos)
   const greeting = {
     title: 'greeting',
     description: 'greeting description'

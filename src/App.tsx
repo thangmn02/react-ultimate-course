@@ -15,6 +15,8 @@ import StateHook from './fundamental/StateHook';
 import EffectHook from './fundamental/EffectHook';
 import React from 'react';
 import PersonalForm from './sampleApp/tony/PersonalForm/PersonalForm';
+import Todos from './fundamental/Todos';
+import { TodoContext, TodoProvider } from './contexts/TodoContext';
 
 function App() {
   const [isShowEffect, setIsShowEffect] = React.useState(true);
@@ -71,6 +73,13 @@ function App() {
       <h1>Personal Hook Form with Tony</h1>
       <PersonalForm />
 
+      <br /><br/>
+
+      <TodoProvider>
+        <h1>Demo Todo with useContext</h1>
+        <Todos />
+      </TodoProvider>
+      
       <br /><br/>
       <br /><br/>
       <br /><br/>

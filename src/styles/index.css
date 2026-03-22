@@ -32,3 +32,11 @@ body {
 h1 {
   font-size: 24px;
 }
+
+input {
+  border: 1px solid #c1c3c3
+}
+
+button {
+  border: 1px solid #c1c3c3
+}
