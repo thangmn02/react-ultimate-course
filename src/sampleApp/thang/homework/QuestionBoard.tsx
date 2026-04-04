@@ -6,7 +6,7 @@ import ReactLogo from '../../../assets/react.svg'
 
 function QuestionBoard() {
   // const categories = [...new Set(dataQuestion.map(q => q.category))];
-  const [categories, setCategories] = React.useState([...new Set(dataQuestion.map(q => q.category))]);
+  const [categories] = React.useState([...new Set(dataQuestion.map(q => q.category))]);
 
   function deleteItem(id: string) {
     console.log('deleteItem: ', id)

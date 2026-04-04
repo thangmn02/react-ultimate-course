@@ -97,7 +97,7 @@ function EffectHook() {
     <div>
       <h1>EffectHook</h1> <br />
       Count: {count}<br />
-      Todos: {todos.map(todo => (
+      Todos: {todos.map((todo: any) => (
         <div>
           Title: {todo.title}
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Box({ title, description, price, updatePrice }) {
+function Box({ title, description, price, updatePrice }: any) {
   console.log("Box re-render ----------")
   return (
     <div>

@@ -68,13 +68,13 @@ function PersonalForm() {
     control,
     formState: { errors },
   } = useForm<IForm>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as any,
   })
   const [users, setUsers] = React.useState<IUser[]>([]);
 
   const onSubmit = (data: IForm) => {
     console.log("data: ", data)
-    setUsers(prevState => {
+    setUsers((prevState: any) => {
       const newUser = {
         id: Date.now(),
         firstName: data.firstName,
