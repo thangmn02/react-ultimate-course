@@ -1,3 +1,4 @@
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Component from './fundamental/Component';
 import ConditionalRendering from './fundamental/ConditionalRendering';
 import Props from './fundamental/Props';
@@ -12,11 +13,10 @@ import ListKey from './fundamental/ListKey';
 import QuestionBoard from './sampleApp/thang/homework/QuestionBoard';
 import UserRegistration from './sampleApp/thang/homework/UserRegistration';
 import Checkout from './features/checkout/Checkout';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-
 
 const theme = createTheme();
 function App() {
+  const [isShowEffect, setIsShowEffect] = React.useState(true);
   return (
     <>
       <Component />
@@ -56,12 +56,6 @@ function App() {
 
       <br /><br/>
       <UserRegistration />
-
-      <br /> <br />
-      <ThemeProvider theme={theme}>   
-      <CssBaseline /> 
-      <Checkout />
-    </ThemeProvider>
     </>
   )
 }

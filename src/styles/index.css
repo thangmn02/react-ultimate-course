@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
   margin: 20px;
 }
@@ -25,4 +27,8 @@ body {
 }
 .alert-button:hover {
   background-color: #737f87;
+}
+
+h1 {
+  font-size: 24px;
 }

@@ -10,7 +10,7 @@ function ListKey() {
   const [todos, setTodos] = React.useState<Todo[]>([]);
 
   React.useEffect(() => {
-    console.log('useEffect ListKey')
+    // console.log('useEffect ListKey')
     const data = [
       { title: 'react', status: 'new' },
       { title: 'javascript', status: 'new' }
@@ -28,10 +28,10 @@ function ListKey() {
     </div>
   ))
   
-  console.log('ListKey render', {
-    todos,
-    listTodos
-  })
+  // console.log('ListKey render', {
+  //   todos,
+  //   listTodos
+  // })
 
   return (
     <div>
