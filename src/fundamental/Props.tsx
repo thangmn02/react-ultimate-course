@@ -30,6 +30,8 @@ const { firstName, hasLoading } = person; es6
 const { firstName, hasLoading, ...restProps } = person; es6
 */
 
+import { useTodoContext } from "../contexts/TodoContext"
+
 interface PersonProps extends React.PropsWithChildren {
   firstName?: string,
   age: number,
@@ -45,6 +47,7 @@ interface PersonProps extends React.PropsWithChildren {
   description: string,
   component1: React.ReactNode,
   component2: React.ElementType,
+  colors: string[]
   // children: React.ReactNode,
 }
 
@@ -63,6 +66,7 @@ function Person({
   component1,
   component2: Component2, // change name properties
   children,
+  colors,
   ...restProps
 }: PersonProps) {
   console.log('rest props: ', restProps)
@@ -74,7 +78,7 @@ function Person({
       City: {city} <br />
       Greeting Title: {title} <br />
       Greeting Description: {description} <br />
-      Name bird: {restProps['name-bird']} <br />
+      Name bird: {(restProps as any)['name-bird']} <br />
       Component1: {component1} <br />
       Component2: {<Component2 />} <br />
       {children} <br />
@@ -90,6 +94,8 @@ function Button() {
 }
 
 function Props() {
+  const todos = useTodoContext();
+  console.log('Props: ', todos)
   const greeting = {
     title: 'greeting',
     description: 'greeting description'
@@ -99,7 +105,6 @@ function Props() {
       <h1>Props</h1>
       <Person 
         // firstName="tony" // string
-        isMale={true} // boolean
         colors={['blue', 'red']} // array
         age={18} //number
         onClick={() => {

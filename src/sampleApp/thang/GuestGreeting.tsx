@@ -5,13 +5,13 @@ import GuestLogin from "./components/GuestLogin";
 export default function GuestGreeting() {
   const[isLoggedIn, setIsLoggedin] =useState(false); 
   
-  function clickLogin(){
-    setIsLoggedin(true)
-  }
+  // function clickLogin(){
+  //   setIsLoggedin(true)
+  // }
   
-  function clickLogout(){
-    setIsLoggedin(false)
-  }
+  // function clickLogout(){
+  //   setIsLoggedin(false)
+  // }
 
   function handleClick() {
     // click 1 -> false  -> !false => true

@@ -23,8 +23,10 @@ how many way to component re-render?
 
 import React from "react";
 import Button from "../components/ui/Button";
+import { useNavigate } from "react-router";
 
 function Component() {
+  const navigate = useNavigate();
   const [forceUpdate, setForcUpdate] = React.useState(Date.now())
   const isLoading = true;
   const buttonStyle = {
@@ -48,9 +50,14 @@ function Component() {
   //   console.log('onAddProduct', name)
   // }
 
+  function goToHome() {
+    navigate('/')
+  }
+
   return (
     <React.Fragment key="3312">
       <h1>Component</h1>
+      <button type="button" onClick={goToHome}>Go to Home</button> <br /> <br />
       <button 
         className="w-full" 
         aria-label="abc" 

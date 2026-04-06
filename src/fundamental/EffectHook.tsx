@@ -29,7 +29,10 @@ function EffectHook() {
   const [count, setCount] = React.useState(1);
   const [todos, setTodos] = React.useState([]);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 36d70eabf0e81ffc6f5a532692c1ca9c53afccbb
   React.useEffect(() => {
     console.log('useEffect empty dependecy');
     // call api -> set state
@@ -48,8 +51,37 @@ function EffectHook() {
     }
   }, []); // once run when component first render
 
+<<<<<<< HEAD
   React.useEffect(() => {
     console.log('useEffect with dependecy');
+=======
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect no dependecy');
+
+    return () => {
+      console.log('cleanup useLayoutEffect no dependecy');
+    }
+  });
+
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect with empty dependecy');
+
+    return () => {
+      console.log('cleanup useLayoutEffect with empty dependecy');
+    }
+  }, []);
+
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect with  dependecy', count);
+
+    return () => {
+      console.log('cleanup useLayoutEffect with dependecy');
+    }
+  }, [count]);
+
+  React.useEffect(() => {
+    console.log('useEffect with dependecy', count);
+>>>>>>> 36d70eabf0e81ffc6f5a532692c1ca9c53afccbb
 
     return () => {
       console.log('cleanup useEffect with dependecy');
@@ -74,7 +106,11 @@ function EffectHook() {
     <div>
       <h1>EffectHook</h1> <br />
       Count: {count}<br />
+<<<<<<< HEAD
       Todos: {todos.map(todo => (
+=======
+      Todos: {todos.map((todo: any) => (
+>>>>>>> 36d70eabf0e81ffc6f5a532692c1ca9c53afccbb
         <div>
           Title: {todo.title}
         </div>
