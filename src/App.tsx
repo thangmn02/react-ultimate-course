@@ -9,6 +9,7 @@ import GuestGreeting from './sampleApp/thang/GuestGreeting';
 import ComposeComponent from './sampleApp/tony/ComposeComponent';
 import GenerateBox from './sampleApp/thang/homework/GenerateBox';
 // import TrafficLight from './sampleApp/thang/homework/TrafficLight';
+import { createTheme } from '@mui/material/styles';
 import TonyTrafficLight from './sampleApp/thang/homework/TonyTrafficLight';
 import ListKey from './fundamental/ListKey';
 import QuestionBoard from './sampleApp/thang/homework/QuestionBoard';
@@ -23,7 +24,10 @@ import PerformanceHook from './fundamental/PerformanceHook';
 import User from './components/user/User';
 import Profile from './components/user/Profile';
 import Account from './components/user/Account';
-import InvoiceDetail from './components/invoice/InvoiceDetail';
+import Invoices from './Invoice/Invoices';
+import InvoiceDetail from './Invoice/InvoiceDetail';
+import JobBoard from './JobBoard/JobBoard';
+;
 
 const theme = createTheme();
 function App() {
@@ -49,7 +53,7 @@ function App() {
               Flowbite
             </span>
           </Link>
-        
+
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
               <li>
@@ -84,42 +88,55 @@ function App() {
                   User
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="invoice"
+                  className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0"
+                >
+                  Invoice
+                </Link>
+
+              </li>
+              <li>
+                <Link
+                  to="job-board"
+                  className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                >
+                  Job Board
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-    
+
       <br /><br /><br />
 
       <main>
         <Routes>
-          <Route path="" element={<div>Please click menu</div>}/>
-          <Route path="component" element={<Component />}/>
-          <Route path="props" element={<Props />}/>
-          <Route path="compose-component" element={<ComposeComponent />}/>
+          <Route path="" element={<div>Please click menu</div>} />
+          <Route path="component" element={<Component />} />
+          <Route path="props" element={<Props />} />
+          <Route path="compose-component" element={<ComposeComponent />} />
           {/* <Route path="user" element={<User />}/>
           <Route path="user/profile" element={<Profile />}/>
           <Route path="user/account" element={<Account />}/> */}
 
           <Route path="user" element={<User />}>
-            <Route path="profile" element={<Profile />}/>
-            <Route path="account" element={<Account />}/>
+            <Route path="profile" element={<Profile />} />
+            <Route path="account" element={<Account />} />
           </Route>
 
-          <Route path="invoice" element={
-            <div>
-              this is invoice
-              <br />
-              <Outlet />
-            </div>
-          }>
-            <Route path=":invoiceId" element={<InvoiceDetail />}/>
+          <Route path="invoice" element={<Invoices />}>
+            <Route />
+
+            <Route path=":invoiceId" element={<InvoiceDetail />} />
           </Route>
-         
+          <Route path="job-board" element={<JobBoard />} />
         </Routes>
       </main>
 
-  
+
 
       <br /><br /><br />
       <hr />
@@ -137,38 +154,38 @@ function App() {
       <br />
       <ConditionalRendering />
 
-      <br/ >
+      <br />
       <GenerateBox />
 
       <br /> <br />
       {/* <TrafficLight /> */}
       <TonyTrafficLight />
-      
+
       <br /> <br />
       <ListKey />
 
 
       <br /> <br />
-      <QuestionBoard/>
+      <QuestionBoard />
       <br /> <br />
 
-      <br /><br/>
+      <br /><br />
       <UserRegistration />
 
       <br /><br />
       <StateHook />
 
-      <br /><br/>
+      <br /><br />
       <button type="button" onClick={() => setIsShowEffect(prevState => !prevState)}>Show EffectHook</button>
       <br />
       {isShowEffect && <EffectHook />}
 
-      <br /><br/>
+      <br /><br />
 
       <h1>Personal Hook Form with Tony</h1>
       <PersonalForm />
 
-      <br /><br/>
+      <br /><br />
 
       <TodoProvider>
         <h1>Demo Todo with useContext</h1>
@@ -177,12 +194,12 @@ function App() {
 
       <br /><br />
       <PerformanceHook />
-      
-      <br /><br/>
-      <br /><br/>
-      <br /><br/>
-      <br /><br/>
-      <br /><br/>
+
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
     </>
   )
 }
