@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './UserRegistration.module.css';
-import type { User, FormErrors } from './types'; // Đã thêm 'type'
+import type { User, FormErrors } from './types';
 import InputField from '../../../../components/ui/InputField';
+import SelectField from '../../../../components/ui/SelectField';
+import Button from '../../../../components/ui/Button';
 
 interface RegistrationFormProps {
   formData: Omit<User, 'id'>;
@@ -30,97 +32,90 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
         <form onSubmit={onSave} className={styles.form}>
           <div className={styles.formGrid}>
             <div className={styles.formGroup}>
-              {/* <label htmlFor="fullName" className={styles.label}>Full Name</label>
-              <input
-                id="fullName"
-                type="text"
-                name="fullName"
-                value={formData.fullName}
-                onChange={onInputChange}
-                className={`${styles.input} ${errors.fullName ? styles.inputError : ''}`}
-              />
-              {errors.fullName && <span className={styles.errorText}>{errors.fullName}</span>} */}
-
               <InputField 
-                id="fullName"
-                type="text"
+                htmlFor="fullName"
                 name="fullName"
-                className={`${styles.input} ${errors.fullName ? styles.inputError : ''}`}
-                labelText='Full Name'
-                htmlFor='fullName'
-                labelClass={styles.label}
+                type="text"
+                labelText="Full Name"
                 value={formData.fullName}
                 onChange={onInputChange}
-                errorFullname={errors.fullName || ''}
+                className={`${styles.input} ${errors.fullName ? styles.inputError : ''}`}
+                labelClass={styles.label}
+                error={errors.fullName}
                 errorsClass={styles.errorText}
               />
             </div>
             
             <div className={styles.formGroup}>
-              <label htmlFor="email" className={styles.label}>Email Address</label>
-              <input
-                id="email"
-                type="email"
+              <InputField 
+                htmlFor="email"
                 name="email"
+                type="email"
+                labelText="Email Address"
                 value={formData.email}
                 onChange={onInputChange}
                 className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
+                labelClass={styles.label}
+                error={errors.email}
+                errorsClass={styles.errorText}
               />
-              {errors.email && <span className={styles.errorText}>{errors.email}</span>}
             </div>
             
             <div className={styles.formGroup}>
-              <label htmlFor="address" className={styles.label}>Address / Street</label>
-              <input
-                id="address"
-                type="text"
+              <InputField 
+                htmlFor="address"
                 name="address"
+                type="text"
+                labelText="Address / Street"
                 value={formData.address}
                 onChange={onInputChange}
                 className={`${styles.input} ${errors.address ? styles.inputError : ''}`}
+                labelClass={styles.label}
+                error={errors.address}
+                errorsClass={styles.errorText}
               />
-              {errors.address && <span className={styles.errorText}>{errors.address}</span>}
             </div>
             
             <div className={styles.formGroup}>
-              <label htmlFor="city" className={styles.label}>City</label>
-              <input
-                id="city"
-                type="text"
+              <InputField 
+                htmlFor="city"
                 name="city"
+                type="text"
+                labelText="City"
                 value={formData.city}
                 onChange={onInputChange}
                 className={`${styles.input} ${errors.city ? styles.inputError : ''}`}
+                labelClass={styles.label}
+                error={errors.city}
+                errorsClass={styles.errorText}
               />
-              {errors.city && <span className={styles.errorText}>{errors.city}</span>}
             </div>
 
             <div className={`${styles.formGroup} ${styles.fullWidth}`}>
-              <label htmlFor="country" className={styles.label}>Country / region</label>
-              <select
-                id="country"
+              <SelectField 
+                htmlFor="country"
                 name="country"
+                labelText="Country / region"
                 value={formData.country}
                 onChange={onInputChange}
+                options={countries}
                 className={`${styles.select} ${errors.country ? styles.inputError : ''}`}
-              >
-                {countries.map(country => (
-                  <option key={country} value={country}>{country}</option>
-                ))}
-              </select>
-              {errors.country && <span className={styles.errorText}>{errors.country}</span>}
+                labelClass={styles.label}
+                error={errors.country}
+                errorsClass={styles.errorText}
+              />
             </div>
           </div>
           
           <div className={styles.formActions}>
             {isEditing && (
-              <button type="button" onClick={onCancel} className={`${styles.btn} ${styles.btnSecondary}`}>
+              <Button type="button" onClick={onCancel} className={`${styles.btn} ${styles.btnSecondary}`}>
                 Cancel
-              </button>
+              </Button>
             )}
-            <button type="submit" className={`${styles.btn} ${styles.btnPrimary}`}>
+            <Button type="submit" className={`${styles.btn} ${styles.btnPrimary}`}>
               {isEditing ? 'Update' : 'Submit'}
-            </button>
+            </Button>
           </div>
         </form>
       </div>

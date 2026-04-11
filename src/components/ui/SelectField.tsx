@@ -1,30 +1,35 @@
 import React from 'react';
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   labelText: string;
   labelClass?: string;
   error?: string;
   errorsClass?: string;
   htmlFor: string;
+  options: string[];
 }
 
-const InputField: React.FC<InputFieldProps> = ({
+const SelectField: React.FC<SelectFieldProps> = ({
   labelText,
   labelClass = '',
   error = '',
   errorsClass = '',
   htmlFor,
-  type = 'text',
+  options,
   className,
   ...props
 }) => {
   return (
     <>
       <label htmlFor={htmlFor} className={labelClass}>{labelText}</label>
-      <input id={htmlFor} type={type} className={className} {...props} />
+      <select id={htmlFor} className={className} {...props}>
+        {options.map(opt => (
+          <option key={opt} value={opt}>{opt}</option>
+        ))}
+      </select>
       {error && <span className={errorsClass}>{error}</span>}
     </>
   );
 };
 
-export default InputField;
+export default SelectField;

@@ -1,14 +1,15 @@
-interface ButtonProps {
-  buttonText: string,
-  onClick?: () => void
+import React from 'react';
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
 }
 
-function Button({ buttonText, onClick }: ButtonProps) {
+const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => {
   return (
-    <button onClick={onClick}>
-      {buttonText}
+    <button className={className} {...props}>
+      {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
