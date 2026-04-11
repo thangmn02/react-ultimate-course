@@ -1,9 +1,8 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { invoiceData } from "./invoiceData";
 
 export default function InvoiceDetail() {
   const { invoiceId } = useParams();
-  const navigate = useNavigate();
 
   const invoice = invoiceData.find(
     (inv) => inv.number.toString() === invoiceId
@@ -20,13 +19,6 @@ export default function InvoiceDetail() {
         {invoice.name}: {invoice.number}
       </p>
       <p className="text-xl">Due Date: {invoice.due}</p>
-
-      <button
-        onClick={() => navigate("/invoice")}
-        className="mt-8 px-5 py-2 border border-gray-400 rounded hover:bg-gray-100"
-      >
-        ← Back to Invoices List
-      </button>
     </div>
   );
 }
